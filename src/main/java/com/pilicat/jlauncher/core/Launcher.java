@@ -100,16 +100,11 @@ public class Launcher
      * Configure from a file.
      *
      * @param is The config input stream.
-     * @throws IOException             If an error occurs reading the config file.
+	 * @throws Exception 
      * @throws MalformedURLException   If the config file contains invalid URLs.
-     * @throws ConfigurationException  If the config file is corrupt.
-     * @throws com.pilicat.jlauncher.core.exception.DuplicateRealmException If the config file defines two realms
-     *                                 with the same id.
-     * @throws com.pilicat.jlauncher.core.exception.NoSuchRealmException    If the config file defines a main entry
-     *                                 point in a non-existent realm.
      */
     public void configure( InputStream is )
-        throws IOException, ConfigurationException, DuplicateRealmException, NoSuchRealmException
+        throws Exception
     {
         Configurator configurator = new Configurator( this );
 

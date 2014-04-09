@@ -89,15 +89,11 @@ public class Configurator implements ConfigurationHandler
      * Configure from a file.
      *
      * @param is The config input stream
-     * @throws IOException             If an error occurs reading the config file.
+     * @throws Exception 
      * @throws MalformedURLException   If the config file contains invalid URLs.
-     * @throws ConfigurationException  If the config file is corrupt.
-     * @throws com.pilicat.jlauncher.core.exception.DuplicateRealmException If the config file defines two realms with the same id.
-     * @throws com.pilicat.jlauncher.core.exception.NoSuchRealmException    If the config file defines a main entry point in
-     *                                 a non-existent realm.
      */
     public void configure( InputStream is )
-        throws IOException, ConfigurationException, DuplicateRealmException, NoSuchRealmException
+        throws Exception
     {
         if ( classBucket == null )
         {
@@ -112,8 +108,11 @@ public class Configurator implements ConfigurationHandler
         {
             foreignClassLoader = this.launcher.getSystemClassLoader();
         }
-
-        ConfigurationParser parser = new ConfigurationParser( this, System.getProperties() );
+        
+        //文本文件配置方式
+        //ConfigurationParser parser = new TextConfigParser( this, System.getProperties() );
+        //xml文件配置方式
+        ConfigurationParser parser = new XmlConfigParser( this, System.getProperties() );
 
         parser.parse( is );
 
