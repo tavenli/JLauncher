@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<libs id="AppLibs">
+		<LibPath>${app.home}/lib/*.jar</LibPath>
+		<LibPath>${app.home}/config</LibPath>
+	</libs>
+	<AppName>AppDemo</AppName>
+	<MainLoop>true</MainLoop>
+	<MainClass>TestApp.TestApp.App</MainClass>
+</Config>
