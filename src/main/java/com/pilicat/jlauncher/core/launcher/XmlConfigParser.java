@@ -38,10 +38,12 @@ public class XmlConfigParser extends ConfigurationParser{
 
 		String appName = XmlUtils.get((Element)xmldoc.getFirstChild(), "AppName");
 		String mainClass = XmlUtils.get((Element)xmldoc.getFirstChild(), "MainClass");
+		String mainLoop = XmlUtils.get((Element)xmldoc.getFirstChild(), "MainLoop");
 
         this.handler.setAppMain( mainClass, appName );
+        this.handler.setMainLoop(mainLoop.equals("true"));
         handler.addRealm( appName );
-        
+      
         
 		List<String> libPathList = new ArrayList<String>();
 		NodeList libs = xmldoc.getElementsByTagName("LibPath");

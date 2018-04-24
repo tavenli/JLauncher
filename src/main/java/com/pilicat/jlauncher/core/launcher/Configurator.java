@@ -2,7 +2,6 @@ package com.pilicat.jlauncher.core.launcher;
 
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,7 +14,6 @@ import java.util.Map;
 
 import com.pilicat.jlauncher.core.ClassBucket;
 import com.pilicat.jlauncher.core.Launcher;
-import com.pilicat.jlauncher.core.exception.ConfigurationException;
 import com.pilicat.jlauncher.core.exception.DuplicateRealmException;
 import com.pilicat.jlauncher.core.exception.NoSuchRealmException;
 import com.pilicat.jlauncher.core.realm.ClassRealm;
@@ -215,4 +213,8 @@ public class Configurator implements ConfigurationHandler
             this.launcher.setAppMain( mainClassName, mainRealmName );
         }
     }
+    
+    public void setMainLoop(boolean mainLoop) {
+		this.launcher.setMainLoop(mainLoop);
+	}
 }

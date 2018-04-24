@@ -21,6 +21,8 @@ public interface ConfigurationHandler
      */
     void setAppMain( String mainClassName, String mainRealmName );
 
+    void setMainLoop(boolean mainLoop);
+    
     /**
      * Define a new realm
      * @param realmName the new realm name

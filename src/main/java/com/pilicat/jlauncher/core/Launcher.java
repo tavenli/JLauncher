@@ -2,7 +2,6 @@ package com.pilicat.jlauncher.core;
 
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -10,8 +9,6 @@ import java.lang.reflect.Modifier;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import com.pilicat.jlauncher.core.exception.ConfigurationException;
-import com.pilicat.jlauncher.core.exception.DuplicateRealmException;
 import com.pilicat.jlauncher.core.exception.NoSuchRealmException;
 import com.pilicat.jlauncher.core.launcher.Configurator;
 import com.pilicat.jlauncher.core.realm.ClassRealm;
@@ -43,6 +40,8 @@ public class Launcher
     protected String mainClassName;
 
     protected String mainRealmName;
+    
+    protected boolean mainLoop;
 
     protected ClassBucket classBucket;
 
@@ -86,9 +85,18 @@ public class Launcher
         return this.mainClassName;
     }
 
+    
 
 
-    public ClassBucket getClassBucket() {
+    public boolean isMainLoop() {
+		return mainLoop;
+	}
+
+	public void setMainLoop(boolean mainLoop) {
+		this.mainLoop = mainLoop;
+	}
+
+	public ClassBucket getClassBucket() {
 		return classBucket;
 	}
 
@@ -334,7 +342,7 @@ public class Launcher
         try
         {
             int exitCode = mainWithExitCode( args );
-
+            
             System.exit( exitCode );
         }
         catch ( Exception e )
@@ -392,6 +400,16 @@ public class Launcher
         try
         {
             launcher.launch( args );
+            
+            if(launcher.isMainLoop()) {
+        		while(true){
+        			try {
+        				Thread.sleep(100000L);
+        			} catch (InterruptedException e) {
+        				e.printStackTrace();
+        			}
+        		}
+            }
         }
         catch ( InvocationTargetException e )
         {
