@@ -37,7 +37,7 @@ set DEFAULT_OPTS=%DEFAULT_OPTS% "-Dapp.name=AppDemo"
 set DEFAULT_OPTS=%DEFAULT_OPTS% "-Djlauncher.conf=%APP_HOME%\jlauncher.xml"
 
 set JAVA_EXE="%JAVA_HOME%\bin\java.exe"
-set CLASSPATH="%APP_HOME%\common\jlauncher-1.0.0-SNAPSHOT.jar"
+set CLASSPATH="%APP_HOME%\common\jlauncher-1.3.0-SNAPSHOT.jar"
 set MAIN_CLASS="com.pilicat.jlauncher.core.Launcher"
 
 %JAVA_EXE% %DEFAULT_OPTS% -classpath %CLASSPATH% %MAIN_CLASS% %*

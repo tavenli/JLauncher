@@ -16,7 +16,7 @@ else
 	DEFAULT_OPTS="$DEFAULT_OPTS -Dapp.home=$APP_HOME -Dapp.name=$APP_NAME "
 	DEFAULT_OPTS="$DEFAULT_OPTS -Djlauncher.conf=$APP_HOME/jlauncher.xml"
 	
-	CLASSPATH="$APP_HOME/common/jlauncher-1.0.0-SNAPSHOT.jar"
+	CLASSPATH="$APP_HOME/common/jlauncher-1.3.0-SNAPSHOT.jar"
 	MAIN_CLASS="com.pilicat.jlauncher.core.Launcher"
 	echo $APP_HOME
 	echo $CLASSPATH

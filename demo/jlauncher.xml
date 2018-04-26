@@ -2,6 +2,7 @@
 <Config>
 	<libs id="AppLibs">
 		<LibPath>${app.home}/lib/*.jar</LibPath>
+		<LibPath>${app.home}/classes</LibPath>
 		<LibPath>${app.home}/config</LibPath>
 	</libs>
 	<AppName>AppDemo</AppName>
