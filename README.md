@@ -1,7 +1,7 @@
 JLauncher
 =========
 
-JLauncher provides a easy way to start a Java application.
+JLauncher provides an easy way to start a Java application.
 
 Demo Download:
 https://github.com/tavenli/JLauncher/releases
